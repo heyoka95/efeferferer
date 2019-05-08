@@ -80,10 +80,17 @@ Ich finde, dass sich das Auas System komplett ändern muss.
 
 == Aufgabe 2: Abgabesystem
 
-_Lösung für Aufgabe 2_
+Zu aller erst erkläre ich wie ich die Komponenten eingeteilt habe, Ich habe drei Komponente namens Korrektor, Organisator und Student, jedes dieser Komponenten implementiert eine gewisse Anzahl an Interfaces mit deren Aufgaben, die anschließend in einer Klasse realisiert werden mit jeweiliger Funktion. Der Grund wieso ich erst interfaces verwendet habe und dann die Klasse ist weil ich eine gewisse Abstraktion halten möchte, denn wir wissen ja dass eine Software sauber strukturiert sein soll und das eine gewisse Hierarchie bzw Abstratkion herschen soll, die unabhängig von ihren Unterklassen sind, daher habe ich interfaces ausgewählt, da sie Highh-Level Code sind und in keinster Weise mit low-level code in Berührung kommen bis auf die realsierung in ihren Klassen. Ich habe mich sehr stark an das SOLID Prinzip gehalten. Nun weiter, als Beispiel haben wir die Komponennte Student. 
+In der Komponennte Student werden vier Interfaces wie IStudentBearbeiten, IStudentAnsehen, IStudentHochladen und IStudentHochladen implementiert. Die Methoden des Interfaces sind alle private da nur der Student die Möglichkeit haben soll seine Sachen zu erledigen, und nicht jeder XBelieibge oder der Korrektor oder die Organisation. Die Methoden in den interfaces tuen auch das wie die Interfaces auch heißen. in IStudentHochladen werden jene private Methoden implementiert die zum Hochladen der Abgabe wichtig sind und dies gilt für alle anderen Interfaces in der Komponente Student. Anschließend werden diese Interfaces in ihren Klassen realisiert zbs IStudentHochladen wird in der Klasse StudentHochladen implemntiert mit seinen Methoden wie private void hochladen() etc. Und dies gilt für alle anderen Interfaces. Das heißt aus jedem Interface wird eine Klasse mit den Funktionen des Interfaces realisiert. Dadurch gibt es eine Schnittstelle und eine Abstraktion, die zu clean code führen kann. 
+
+Nun haben wir die zweite Komponennte Organisator und dieser ist Zuständig für das Hochladen und zuweisen der Studenten. In ihm werden zwei Interfaces implementiert namens IOrgaHochladen und iOrgaZuweisen, die anschließend in ihren Klassen realisiert werden namens OrgaZuweisen und OrgaHochladen. OrgaZuweißen steht für die Zuweisung der Korrektoren für die Abgaben, und OrgaHochladen ist bedeutend falls ein Student vergessen hat, seinen Abgabe Termin nicht einzuhalten, hat die Organisation die Möglichket diese hochzuladen aus diesem Grunde wurdedas Interface IOrgaHochladen mit seiner Klasse OrgaHochladen implementiert. Aber man darf nicht vergessen, dass diese Methoden in den Interfaces private sein müssen, da nur der Organisator den Zugriff haben soll auf das Zuweisen und Hochladen.
+
+Die dritte Komponennte ist der Korrektor und darunter befindet sich ein Interface namens IBewerten, dieses interface beinhaltet die private Methoden, die für Bewerten der Aufgabe notwenidg sind. Dieses Interface wird in der Klasse Korrektor mit all den privaten Methoden realisiert.
+
 
 == Aufgabe 3: Namensfindung
-"Abgabe-Manager" finde ich passend, da wir die Funktion von Auas zum teil übernehmen und die Zuweisungen der Abgaben an die jeweilige Korrektoren verteilen und verwalten. Dadurch haben wir ein geordnetes Verwaltungssystem.
+"Abgaben-Manager" finde ich passend, da wir die Funktion von Auas zum teil übernehmen und die Zuweisungen der Abgaben an die jeweilige Korrektoren verteilen und verwalten. Dadurch haben wir ein geordnetes Verwaltungssystem. 
+Wir wollen ja eine Software für ein Abgabesystem das sowohl funktioniert als auch mobil und flexibel ist bzw keine starre Software, daher finde ich den Begriff Manager passend weil er eben für Mobilität, Flexibilität und Struktur steht.
 
 == Aufgabe 4: Funktionsumfang
 
